@@ -4,9 +4,9 @@ shopt -s extglob
 echo "enter email address : "
 read email
 
-pat="^[a-zA-Z0-9]*@[a-zA-Z]+.[a-zA-Z]$" 
+emailPattern="^[a-zA-Z0-9]+([.][a-zA-Z0-9]+)*@[a-zA-Z]+.[a-zA-Z]$" 
 
-if [[ $email =~ $pat ]]
+if [[ $email =~ $emailPattern ]]
 then
 	echo "Right..!!"
 else
