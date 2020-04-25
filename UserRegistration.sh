@@ -4,6 +4,7 @@ firstNamePattern='^[A-Z][a-z]{2,}$'
 lastNamePattern='^[A-Z][a-z]{2,}$'
 emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)?@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})?$'
 mobilePattern="^([0-9]{2}[[:space:]])?[0-9]{9}$"
+passwordPattern='[a-zA-Z0-9]{8,}$'
 
 function patternValidate() {
 	
@@ -42,10 +43,18 @@ function mobile() {
 	patternValidate "$mobileNumber" $mobilePattern
 	
 }
+
+function password() {
+	
+	read -p "Enter Password : " password
+	patternValidate $password $passwordPattern
+
+}
 while [ true ]
 do
 	#firstName
 	#lastName
 	#email
-	mobile
+	#mobile
+	password
 done
