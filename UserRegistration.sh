@@ -1,8 +1,9 @@
 #!/bin/bash -x
 
-function validate() {
-	
-	firstNamePattern='^[A-Z][a-z]{2,}$'
+firstNamePattern='^[A-Z][a-z]{2,}$'
+lastNamePattern='^[A-Z][a-z]{2,}$'
+
+function patternValidate() {
 	
 	if [[ $firstName =~ $firstNamePattern ]]
 	then
@@ -14,9 +15,16 @@ function validate() {
 
 
 function firstName() {
-	read -p "Enter Your First Name : " firstName
 	
-	validate $firstName
+	read -p "Enter Your First Name : " firstName
+	patternValidate $firstName $firstNamePattern
+}
+
+function lastName() {
+	
+	read -p "Enter Your Last Name : " lastName
+	patternValidate $lastName $lastNamePattern
 }
 
 firstName
+lastName
