@@ -35,7 +35,7 @@ function email(){
 
 while [ true ]
 do
-	#firstName
-	#lastName
+	firstName
+	lastName
 	email
 done
