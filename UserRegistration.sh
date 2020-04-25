@@ -2,10 +2,11 @@
 
 firstNamePattern='^[A-Z][a-z]{2,}$'
 lastNamePattern='^[A-Z][a-z]{2,}$'
+emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)?@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})?$'
 
 function patternValidate() {
 	
-	if [[ $firstName =~ $firstNamePattern ]]
+	if [[ $1 =~ $2 ]]
 	then
 		echo "Right..!"
 	else
@@ -26,5 +27,15 @@ function lastName() {
 	patternValidate $lastName $lastNamePattern
 }
 
-firstName
-lastName
+function email(){
+	
+	read -p "Enter Your Email Address : " email
+	patternValidate $email $emailPattern
+}
+
+while [ true ]
+do
+	#firstName
+	#lastName
+	email
+done
