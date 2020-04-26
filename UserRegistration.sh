@@ -47,7 +47,7 @@ function password() {
 	
 	upper='[[:upper:]]+'
 	number='[[:digit:]]+'
-	specialCharacter='[@$#!?&%]'
+	specialCharacter='[@$#!?&%]{1}+'
 	passwordPattern='[a-zA-Z0-9]$'
 
 	read -p "Enter Password : " password
