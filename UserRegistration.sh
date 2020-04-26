@@ -45,12 +45,13 @@ function mobile() {
 
 function password() {
 	
-	upper='[A-Z]+'
+	upper='[[:upper:]]+'
+	number='[[:digit:]]+'
 	passwordPattern='[a-zA-Z0-9]$'
 
 	read -p "Enter Password : " password
 	
-	if [[ $password =~ $upper && ${#password} -gt '7' && $password =~ $passwordPattern ]]
+	if [[ $password =~ $upper && ${#password} -gt '7' && $password =~ $passwordPattern && $password =~ $number ]]
 	then
 		echo "Right..!"
 	else
