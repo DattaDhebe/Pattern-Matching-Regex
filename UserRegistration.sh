@@ -60,14 +60,16 @@ function password() {
 		else
 			echo "Wrong..!"
 		fi
+	else
+		echo "Wrong..!"
 	fi
 
 }
 while [ true ]
 do
-	#firstName
-	#lastName
-	#email
-	#mobile
+	firstName
+	lastName
+	email
+	mobile
 	password
 done
