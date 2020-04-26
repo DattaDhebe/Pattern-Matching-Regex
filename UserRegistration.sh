@@ -4,7 +4,6 @@ firstNamePattern='^[A-Z][a-z]{2,}$'
 lastNamePattern='^[A-Z][a-z]{2,}$'
 emailPattern='^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)?@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})?$'
 mobilePattern="^([0-9]{2}[[:space:]])?[0-9]{9}$"
-passwordPattern='[[:upper:]]*.[a-zA-Z0-9]{8,}$'
 
 function patternValidate() {
 	
@@ -46,8 +45,17 @@ function mobile() {
 
 function password() {
 	
+	upper='[A-Z]+'
+	passwordPattern='[a-zA-Z0-9]$'
+
 	read -p "Enter Password : " password
-	patternValidate $password $passwordPattern
+	
+	if [[ $password =~ $upper && ${#password} -gt '7' && $password =~ $passwordPattern ]]
+	then
+		echo "Right..!"
+	else
+		echo "Wrong..!"
+	fi
 
 }
 while [ true ]
