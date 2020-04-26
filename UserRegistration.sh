@@ -47,15 +47,19 @@ function password() {
 	
 	upper='[[:upper:]]+'
 	number='[[:digit:]]+'
+	specialCharacter='[@$#!?&%]'
 	passwordPattern='[a-zA-Z0-9]$'
 
 	read -p "Enter Password : " password
 	
 	if [[ $password =~ $upper && ${#password} -gt '7' && $password =~ $passwordPattern && $password =~ $number ]]
 	then
-		echo "Right..!"
-	else
-		echo "Wrong..!"
+		if [[ $password =~ $specialCharacter ]]
+		then
+			echo "Right..!"
+		else
+			echo "Wrong..!"
+		fi
 	fi
 
 }
